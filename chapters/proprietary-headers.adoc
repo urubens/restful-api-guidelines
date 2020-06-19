@@ -10,7 +10,7 @@ methods.
 
 
 [#183]
-== {MUST} use only the specified proprietary Zalando headers
+== {MUST} use only the specified proprietary headers
 
 As a general rule, proprietary HTTP headers should be avoided. Still
 they can be useful in cases where context needs to be passed through
@@ -48,21 +48,6 @@ case-sensitive.
 For more information see <<233>>.
 |GKY7oDhpSiKY_gAAAABZ_A
 
-|[[x-tenant-id]]{X-Tenant-ID}|String|
-Identifies the tenant initiated the request
-to the multi tenant Zalando Platform. The {X-Tenant-ID} must be set 
-according to the Business Partner ID extracted from the OAuth token when 
-a request from a Business Partner hits the Zalando Platform. 
-|9f8b3ca3-4be5-436c-a847-9cd55460c495
-
-|[[x-sales-channel]]{X-Sales-Channel}|String|
-Sales channels are owned by retailers and represent a specific consumer segment
-being addressed with a specific product assortment that is offered via CFA
-retailer catalogs to consumers (see
-https://pages.github.bus.zalan.do/core-platform/docs/glossary/glossary.html[platform
-glossary (internal link)])
-|52b96501-0f8d-43e7-82aa-8a96fab134d7
-
 |[[c-frontend-type]]{X-Frontend-Type}|String|
 Consumer facing applications (CFAs) provide business experience to their
 customers via different frontend application types, for instance, mobile app
@@ -83,19 +68,6 @@ e.g. smartphone Android vs. iOS. Via this header info should be passed-through
 as generic aspect. Current range is iOS, Android, Windows, Linux, MacOS.
 |Android
 
-|[[x-mobile-advertising-id]]{X-Mobile-Advertising-Id}|String|
-It is either the 
-https://developer.apple.com/documentation/adsupport/asidentifiermanager[IDFA] 
-(Apple Identifier for mobile Advertising) for iOS, or the 
-https://support.google.com/googleplay/android-developer/answer/6048248[GAID] 
-(Google mobile Advertising Identifier) for Android. It is a unique, 
-customer-resettable identifier provided by mobile device’s operating system 
-to faciliate personalized advertising, and usually passed by mobile apps via http header 
-when calling backend services. Called services should be ready to pass this 
-parameter through when calling other services. It is not sent if the customer 
-disables it in the settings for respective mobile platform.
-|b89fadce-1f42-46aa-9c83-b7bc49e76e1f
-
 |=======================================================================
 
 *Exception:* The only exception to this guideline are the conventional
@@ -105,7 +77,7 @@ hop-by-hop `X-RateLimit-` headers which can be used as defined in <<153>>.
 [#184]
 == {MUST} propagate proprietary headers
 
-All Zalando's proprietary headers are end-to-end headers.
+All proprietary headers are end-to-end headers.
 footnote:header-types[HTTP/1.1 standard ({RFC-7230}#section-6.1[RFC 7230])
 defines two types of headers: end-to-end and hop-by-hop headers. End-to-end
 headers must be transmitted to the ultimate recipient of a request or response.
@@ -159,14 +131,6 @@ format or length, it must define this restrictions in its API specification,
 and be generous and remove invalid characters or cut the length to the
 supported limit.
 
-*Hint:* In case distributed tracing is supported by {SRE-Tracing}[OpenTracing
-(internal link)] you should ensure that created _spans_ are tagged using
-`flow_id` — see
-{SRE-Tracing}/blob/master/wg-semantic-conventions/best-practices/flowid.md[How
-to Connect Log Output with OpenTracing Using Flow-IDs (internal link)] or
-{SRE-Tracing}/blob/master/wg-semantic-conventions/best-practices.md[Best
-practises (internal link)].
-
 
 === Service Guidance
 
@@ -183,7 +147,3 @@ service must create a new _Flow-ID_.
 with API-Calls or consumed events as...
 ** input for all API called and events published during processing
 ** data field written for logging and tracing
-
-*Hint:* This rule also applies to application internal interfaces and events
-not published via Nakadi (but e.g. via AWS SQS, Kinesis or service specific
-DB solutions).

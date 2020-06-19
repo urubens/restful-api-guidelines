@@ -255,10 +255,9 @@ individual parts _fail_ or each part is executed _asynchronously_!
 
 The rules are intended to allow clients to act on batch and bulk responses in
 a consistent way by inspecting the individual results. We explicitly reject
-the option to apply {200} for a completely successful batch as proposed in
-Nakadi's https://nakadi.io/manual.html#/event-types/name/events_post[`POST
-/event-types/{name}/events`] as short cut without inspecting the result, as we
-want to avoid  risks and expect clients to handle partial
+the option to apply {200} for a completely successful batch
+as shortcut without inspecting the result, as we
+want to avoid risks and expect clients to handle partial
 batch failures anyway.
 
 The bulk or batch response may look as follows:
@@ -379,15 +378,6 @@ Examples of problem types that **do not** satisfy our criteria:
 * `https://docs.team.company.org/out-of-stock`
 * `https://en.wikipedia.org/wiki/Stockout`
 * `http://www.businessdictionary.com/definition/stockout.html`
-
-
-**Hint** for backward compatibility: A previous version of this guideline
-(before the publication of {RFC-7807}[RFC 7807] and the registration of the
-media type) told to return custom variant of the media type
-`application/x.problem+json`. Servers for APIs defined before this change
-should pay attention to the `Accept` header sent by the client and set the
-`Content-Type` header of the problem response correspondingly. Clients of such
-APIs should accept both media types.
 
 
 [#177]

@@ -12,13 +12,11 @@ You must follow the <<api-first, API First Principle>>, more specifically:
 
 * You must define APIs first, before coding its implementation, <<101, using
   Open API as specification language>>
-* You must design your APIs consistently with this guidelines; use our
-  https://zally.zalando.net/[API Linter Service [internal link]] for automated
-  rule checks. 
-* You must call for early review feedback from peers and client developers, 
+* You must design your APIs consistently with this guidelines
+* You must call for early review feedback from peers and client developers [.line-through]#,
   and apply https://github.bus.zalan.do/ApiGuild/ApiReviewProcedure[our 
   lightweight API review process [internal link]] for all component external
-  APIs, i.e. all apis with `x-api-audience =/= component-internal` (see <<219>>). 
+  APIs, i.e. all apis with `x-api-audience =/= component-internal` (see <<219>>)#.
 
 
 [#101]
@@ -27,33 +25,24 @@ You must follow the <<api-first, API First Principle>>, more specifically:
 We use the http://swagger.io/specification/[Open API specification] as standard
 to define API specification files. API designers are required to provide the API
 specification using a single *self-contained YAML* file to improve readability.
-We encourage to use *Open API 3.0* version, but still support *Open API 2.0*
-(a.k.a. Swagger 2).
+We use *Open API 3.0* version.
 
 The API specification files should be subject to version control using a source
-code management system - best together with the implementing sources. 
-
-You <<192, must / should publish>> the component <<219, external / internal>>
-API specification with the deployment of the implementing service, and, hence,
-make it discoverable for the group via our https://apis.zalando.net/[API Portal
-[internal link]].
+code management system - best together with the implementing sources.
 
 *Hint:* A good way to explore *Open API 3.0/2.0* is to navigate through the
 https://openapi-map.apihandyman.io/[Open API specification mind map] and use
-our https://plugins.jetbrains.com/search?search=swagger+Monte[Swagger Plugin
+https://plugins.jetbrains.com/search?search=swagger+Monte[Zalando Swagger Plugin
 for IntelliJ IDEA] to create your first API. To explore and validate/evaluate
-existing APIs the https://editor.swagger.io/[Swagger Editor] or our
-https://apis.zalando.net[API Portal] may be a good starting point.
+existing APIs the https://editor.swagger.io/[Swagger Editor].
 
-*Hint:* We do not yet provide guidelines for https://graphql.org/[GraphQL]. 
-Following our https://techradar.zalando.net/languages/graphql.html[Zalando
-Tech Radar [internal link]], we focus on resource oriented HTTP/REST API style
+*Hint:* We do not (yet) provide guidelines for https://graphql.org/[GraphQL].
+We focus on resource oriented HTTP/REST API style
 (and related tooling and infrastructure support) for general purpose
 peer-to-peer microservice communication. Here, we think that GraphQL has no
 major benefits, but a couple of downsides compared to REST. However, GraphQL
 can provide a lot of value for specific target domain problems, especially
-backends for frontends (BFF) and mobile clients, and here we already make use
-of GraphQL as API technology for our DX Interface Framework. 
+backends for frontends (BFF) and mobile clients.
 
 
 [#234]
@@ -69,7 +58,6 @@ unexpected ways.
 However, you may use remote references to resources accessible by the following
 service URLs.
 
-* `https://infrastructure-api-repository.zalandoapis.com/` (internal repository of APIs)
 * `https://opensource.zalando.com/problem/` (see <<176>>)
 * `https://zalando.github.io/problem/` (deprecated alias for <<176>>)
 

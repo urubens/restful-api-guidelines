@@ -8,7 +8,7 @@
 
 :creator: Zalando SE
 :producer: Asciidoctor
-:keywords: Zalando, Guidelines, RESTful, API, Events, Schema
+:keywords: Guidelines, RESTful, API, Events, Schema
 :copyright: CC-BY-SA 4.0
 
 
@@ -204,12 +204,11 @@
 :RFC-cacheable: pass:[<a href="https://tools.ietf.org/html/rfc7231#section-4.2.3">cacheable</a>]
 
 
-= Zalando RESTful API and Event Scheme Guidelines
-Zalando SE
+= RESTful API and Event Scheme Guidelines
 
 image::assets/api-zalando-small.jpg[API Guild Logo]
 
-Other formats: link:zalando-guidelines.pdf[PDF], link:zalando-guidelines.epub[EPUB3]
+Other formats: link:restful-api-guidelines.pdf[PDF], link:restful-api-guidelines.epub[EPUB3]
 
 toc::[]
 

@@ -16,8 +16,8 @@ script:
   - cp -r models/* output/
   - cp -r -n legacy/* output/
   - ./generate_rules_json.sh output
-  - mv output/index.pdf output/zalando-guidelines.pdf
-  - mv output/index.epub output/zalando-guidelines.epub
+  - mv output/index.pdf output/restful-api-guidelines.pdf
+  - mv output/index.epub output/restful-api-guidelines.epub
 
 after_error:
   - docker logs asciidoc-to-html
@@ -31,4 +31,4 @@ after_failure:
   - docker logs asciidoc-to-epub3
   - cat check_rule_ids_result
 
-after_success: ./travis_deploy.sh
+# after_success: ./travis_deploy.sh

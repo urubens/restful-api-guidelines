@@ -10,10 +10,10 @@ _host_, _permission_, and _event names_ within an the application landscape. It
 helps to preserve uniqueness of names while giving readers meaningful context
 information about the addressed component. Besides, the most important aspect
 is, that it allows to keep APIs stable in the case of technical and
-organizational changes (Zalando for example maintains an internal naming convention).
+organizational changes.
 
-To make use of this advantages for APIs with a larger <<219, audience>> we
-strongly recommended to follow the functional naming schema for <<224,
+To make use of these advantages for APIs with a larger <<219, audience>> we
+strongly recommended following the functional naming schema for <<224,
 hostnames>>, <<215, permission names>>, and <<213, event names>> in APIs as
 follows:
 
@@ -37,9 +37,8 @@ functional component itself:
 <functional-component>  ::= [a-z][a-z0-9-]* -- name of owning functional component
 ----
 
-*Internal Hint*:  Use the simple 
-https://github.bus.zalan.do/team-architecture/functional-component-registry[functional
-name registry (internal link)] to register your functional name before using
+*Hint*:  Use a functional
+name registry to register your functional name before using
 it. The registry is a centralized infrastructure service to ensure uniqueness
 of your functional names (and available domains) and to support hostname DNS
 resolution.
@@ -52,7 +51,7 @@ Please see the following rules for detailed functional naming patterns:
 
 
 [#224]
-== {MUST} follow naming convention for hostnames
+== {MUST} follow naming convention for hostnames [TO VALIDATE]
 
 Hostnames in APIs must, respectively should conform to the functional naming
 depending on the <<219, audience>> as follows (see <<223>> for details and
@@ -62,7 +61,7 @@ depending on the <<219, audience>> as follows (see <<223>> for details and
 -----
 <hostname>             ::= <functional-hostname> | <application-hostname>
 
-<functional-hostname>  ::= <functional-name>.zalandoapis.com
+<functional-hostname>  ::= <functional-name>.myregistryapis.com
 -----
 
 The following application specific legacy convention is *only* allowed for

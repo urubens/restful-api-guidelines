@@ -111,17 +111,10 @@ There are some data fields that come up again and again in API data:
   object or the relationship to the referenced object followed by `_id` (e.g.
   `partner_id` not `partner_number`, or `parent_node_id` for the reference to a parent
   node from a child node, even if both have the type `Node`).
-  *Exception*: We use `customer_number` instead of `customer_id` for customer facing 
-  identification of customers due to legacy reasons. (Hint: `customer_id` used to be defined 
-  as internal only, technical integer key, see
-  https://apis.zalando.net/redirect/5675b6ec-8934-11ea-929e-68f728c1ba70[Naming
-  Decision: `customer_number` vs `customer_id` [internal link]]).
 * [[created_at]]{created_at}: when the object was created. If used, this must
-  be a `date-time` construct. Originally named [[created]]{created} before
-  adding the <<235, naming conventions for date/time properties>>.
+  be a `date-time` construct.
 * [[modified_at]]{modified_at}: when the object was updated. If used, this must
-  be a `date-time` construct. Originally named [[modified]]{modified} before
-  adding the <<235, naming conventions for date/time properties>>.
+  be a `date-time` construct.
 * [[type]]{type}: the kind of thing this object is. If used, the type of this
   field should be a string. Types allow runtime information on the entity
   provided that otherwise requires examining the Open API file.
@@ -162,7 +155,7 @@ tree_node:
 ----
 
 These properties are not always strictly necessary, but making them idiomatic
-allows API client developers to build up a common understanding of Zalando's
+allows API client developers to build up a common understanding of our
 resources. There is very little utility for API consumers in having different
 names or value types for these fields across APIs.
 
