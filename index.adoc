@@ -206,7 +206,7 @@
 
 = RESTful API and Event Scheme Guidelines
 
-image::assets/api-zalando-small.jpg[API Guild Logo]
+//image::assets/api-zalando-small.jpg[API Guild Logo]
 
 Other formats: link:restful-api-guidelines.pdf[PDF], link:restful-api-guidelines.epub[EPUB3]
 
