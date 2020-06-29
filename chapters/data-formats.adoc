@@ -53,7 +53,7 @@ following {RFC-7493}#section-4.4[RFC 7493 Section 4.4].
 == {SHOULD} prefer standard media type name `application/json`
 
 The usage of custom media types like
-`application/x.cytomine.article+json` is not recommended
+`application/x.vendor.article+json` is not recommended
 and should be avoided, except where it is necessary for cases of
 <<114,media type versioning>>. Instead, just use the standard media type name
 `application/json` (or `application/problem+json` for <<176>>).

@@ -1,8 +1,8 @@
 [[events]]
 = Events
 
-Zalando’s architecture centers around decoupled microservices and in
-that context we favour asynchronous event driven approaches. The
+When software architecture centers around decoupled microservices,
+we favour asynchronous event driven approaches. The
 guidelines in this section focus on how to design and publish events
 intended to be shared for others to consume.
 
@@ -101,7 +101,7 @@ events.
 [#197]
 == {MUST} ensure that events are registered as event types
 
-In Zalando's architecture, events are registered using a structure
+In a microservice architecture, events are registered using a structure
 called an _Event Type_. The Event Type declares standard information as
 follows:
 

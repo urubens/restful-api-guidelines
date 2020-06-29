@@ -104,7 +104,7 @@ info:
 
 
 [#219]
-== {MUST} provide API audience [TO VALIDATE]
+== {MUST} provide API audience
 
 Each API must be classified with respect to the intended target *audience*
 supposed to consume the API, to facilitate differentiated standards on APIs

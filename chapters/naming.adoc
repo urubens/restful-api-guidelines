@@ -51,7 +51,7 @@ Please see the following rules for detailed functional naming patterns:
 
 
 [#224]
-== {MUST} follow naming convention for hostnames [TO VALIDATE]
+== {MUST} follow naming convention for hostnames
 
 Hostnames in APIs must, respectively should conform to the functional naming
 depending on the <<219, audience>> as follows (see <<223>> for details and
@@ -59,19 +59,7 @@ depending on the <<219, audience>> as follows (see <<223>> for details and
 
 [source,bnf]
 -----
-<hostname>             ::= <functional-hostname> | <application-hostname>
-
-<functional-hostname>  ::= <functional-name>.myregistryapis.com
------
-
-The following application specific legacy convention is *only* allowed for
-hostnames of <<219, component-internal>> APIs:
-
-[source,bnf]
------
-<application-hostname> ::= <application-id>.<organization-unit>.zalan.do
-<application-id>       ::= [a-z][a-z0-9-]*  -- application identifier
-<organization-id>      ::= [a-z][a-z0-9-]*  -- organization unit identifier, e.g. team identifier
+<hostname>             ::= <functional-name>.myregistryapis.com
 -----
 
 
